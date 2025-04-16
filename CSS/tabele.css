@@ -1,0 +1,39 @@
+table {
+    background:#90B8F8;
+    text-align:center;
+    width:94%;
+    margin:2%;
+    border:1pt solid #000040;
+}
+
+caption {
+    font-size:120%;
+    font-weight: bold;
+}
+
+tfoot, thead {
+    background:#5F85DB;
+    color:#26282B;
+    font-size:1.1em;
+    padding: 5pt;
+}
+
+#wyjatek {
+    background: #5F85DB;
+}
+
+tr:nth-child(even) {
+    background: #dbffff;
+}
+
+td, th {
+    border: 1pt solid #26282B;
+}
+
+td {
+    color: #26282B;
+}
+
+tfoot a {
+    color: #26282B;
+}

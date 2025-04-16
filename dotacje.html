@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularz dotacji</title>
+    </head>
+
+    <body>
+        
+        <h2>Formularz dotacji</h2>
+
+        <form action="#" method="post">
+            
+            <fieldset>
+                <legend>Beneficjent</legend>
+
+                <table>
+                    <tr>
+                        <td>Nazwa beneficjenta:</td>
+                        <td><input type="text" list="lista-organizacji" title="Nazwa nie może zawierać cyfr i znaków specjalnych" pattern="^[A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\s]+$" required>
+                        
+                            <datalist id="lista-organizacji">
+                                <option value="Wioski Dziecięce SOS">Wioski Dziecięce SOS</option>
+                                <option value="Caritas">Caritas</option>
+                                <option value="Stowarzyszenie Leśników i Właścieli Lasów">Stowarzyszenie Leśników i Właścieli Lasów</option>
+                                <option value="Fundacja Wolności Gospodarczej">Fundacja Wolności Gospodarczej</option>
+                            </datalist>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wartość dotacji:</td>
+                        <td><input type="number" min="20" step="5" title="Minimalna kwota wpłaty to 20 zł" required></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dane karty płatniczej</legend>
+
+                <table>
+                    <tr>
+                        <td>Karta:</td>
+                        <td>
+                            <p>
+                                <input type="radio" name="karta" value="Visa" required> Visa
+                                <input type="radio" name="karta" value="Master Card" required> Master Card
+                            </p>
+                        </td>
+                     </tr>
+                    
+                    <tr>
+                        <td>Numer:</td>
+                        <td><input type="text" title="Numer karty płatniczej składa się z 13 lub 16 cyfr" pattern="^\d{13}(\d{3})?$" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Data ważności karty:</td>
+                        <td><input type="text" title="Data ważnosci znajduje się pod numerem karty" placeholder="12/2025" pattern="^(\d|10|11|12)\/\d{4}$" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Kod CVV:</td>
+                        <td><input type="text" title="Kod CVV składa się z 3 lub 4 cyfr i znajduje się na odwrocie karty" pattern="^\d{3}\d?$" required></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <table>
+                <tr>
+                    <td>Darczyńca:</td>
+                    <td><input type="text" title="Użyj liter, cyfr lub znaku podkreślenia, conajmniej 3 znaki" pattern="^[\wĄĆĘŁŃÓŚŹŻąćęłńóśźż]{3,}$" required></td>
+                </tr>
+            </table>
+
+            <input type="submit" value="Wpłać">
+            <input type="reset" value="Wyczyść">
+        </form>
+
+    </body>
+
+</html>
