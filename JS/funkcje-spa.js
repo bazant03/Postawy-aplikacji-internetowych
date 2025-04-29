@@ -76,7 +76,21 @@ function pokazPost() {
         'Twój email:<br /><input type="email" name="email" id="email" required /><br />' +
         // dodaj kolejne 2 pola formularza
         'Imię i Nazwisko:<br /><input type="text" name="imie_nazwisko" id="imie_nazwisko" required /><br />' +
-        'Numer telefonu:<br /><input type="tel" name="tel" id="tel" required /><br />' +
+        'Numer telefonu:<br /><input type="tel" name="tel" id="tel" required /><br /><br />' +
+        "Zainteresowania: <br />" +
+        '<input type="checkbox" name="zainteresowania" value="Sport"> Sport' +
+        '<input type="checkbox" name="zainteresowania" value="Muzyka"> Muzyka' +
+        '<input type="checkbox" name="zainteresowania" value="Film"> Film' +
+        '<input type="checkbox" name="zainteresowania" value="Inne"> Inne' +
+        "<br /><br />" +
+        "Wiek: <br />" +
+        '<input type="radio" name="wiek" value="Mniej niż 10"> Mniej niż 10' +
+        '<input type="radio" name="wiek" value="10-20"> 10-20' +
+        '<input type="radio" name="wiek" value="21-30"> 21-30' +
+        '<input type="radio" name="wiek" value="31-40"> 31-40' +
+        '<input type="radio" name="wiek" value="41-50"> 41-50' +
+        '<input type="radio" name="wiek" value="Więcej niż 50"> Więcej niż 50' +
+        "<br /><br />" +
         'Komentarz: <br /><textarea rows="3" cols="20" id="wiadomosc" name="wiadomosc" required></textarea>' +
         '<br /> <input type="submit" name="wyslij" value="Wyślij" />' +
         "</form></article>";
@@ -86,19 +100,35 @@ function pokazPost() {
 function pokazDane() {
     //Funkcja zbiera dane wpisane w pola formularza i wyświetla okienko
     //typu confirm do zatwierdzenia przez użytkownika:
+
+    const email = document.getElementById("email").value;
+    const imie_nazwisko = document.getElementById("imie_nazwisko").value;
+    const tel = document.getElementById("tel").value;
+    const komentarz = document.getElementById("wiadomosc").value;
+    const zainteresowania = Array.from(document.querySelectorAll('input[name="zainteresowania"]:checked'))
+        .map((z) => z.value)
+        .join(", ");
+    const wiek = document.querySelector('input[name="wiek"]:checked').value;
+
     var dane = "Następujące dane zostaną wysłane:\n";
     dane +=
         "Email: " +
-        document.getElementById("email").value +
+        email +
         "\n" +
         "Imię i nazwisko: " +
-        document.getElementById("imie_nazwisko").value +
+        imie_nazwisko +
         "\n" +
         "Numer telefonu: " +
-        document.getElementById("tel").value +
+        tel +
+        "\n" +
+        "Zainteresowania: " +
+        zainteresowania +
+        "\n" +
+        "Wiek: " +
+        wiek +
         "\n" +
         "Komentarz: " +
-        document.getElementById("wiadomosc").value +
+        komentarz +
         "\n";
     // uzupełnij dane ...
     if (window.confirm(dane)) return true;
