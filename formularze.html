@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="JS/walidacja.js"></script>
 </head>
 
 <body>
@@ -56,24 +57,27 @@
             </ul>
 
             <h3>Przykładowy formularz HTML:</h3>
-            <form action="#" method="post">
+            <form action="#" method="post" onsubmit="return sprawdz()">
                 <table>
                     <tr>
                         <td class="etykieta"><label for="lastname">Nazwisko:</label></td>
-                        <td class="pole"><input type="text" name="lastname" id="lastname" pattern="^[A-Z+ŁŻ][a-z+ąćęłńóśźż]+(-[A-Z+ŁŻ][a-z+ąćęłńóśźż]+)?$" placeholder="Nowak" required></td>
+                        <td class="pole"><input name="lastname" id="lastname" placeholder="Nowak"></td>
+                        <td id="nazw_error" class="czerwone"></td>
                     </tr>
                     <tr>
                         <td class="etykieta"><label for="age">Wiek:</label></td>
-                        <td class="pole"><input type="number" name="age" id="age" min="13" max="130" value="18" required></td>
+                        <td class="pole"><input name="age" id="age" placeholder="18"></td>
+                        <td id="wiek_error" class="czerwone"></td>
                     </tr>
                     <tr>
                         <td class="etykieta"><label for="email">Adres e-mail:</label></td>
-                        <td class="pole"><input type="email" name="email" id="email"  pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" placeholder="example@example.com" required></td>
+                        <td class="pole"><input name="email" id="email" placeholder="example@example.com"></td>
+                        <td id="email_error" class="czerwone"></td>
                     </tr>
                     <tr>
                         <td class="etykieta"><label for="country">Państwo:</label></td>
                         <td class="pole">
-                            <select name="country" id="country" size="3" required>
+                            <select name="country" id="country">
                                 <option value="f">Finlandia</option>
                                 <option value="p">Polska</option>
                                 <option value="r">Rumunia</option>
@@ -83,15 +87,17 @@
                 </table>
                 
                 <h4>Zamawiam tutorial z języka:</h4>
-                <input type="checkbox" name="PHP" value="PHP"> PHP
-                <input type="checkbox" name="C/C++" value="C/C++" checked required> C/C++
-                <input type="checkbox" name="Java" value="Java"> Java
+                <input type="checkbox" name="PHP" id="php"> PHP
+                <input type="checkbox" name="C/C++" id="c/c++"> C/C++
+                <input type="checkbox" name="Java" id="java"> Java
+                <span id="produkt_error" class="czerwone"></span></p>
                
                 <h4>Sposób zapłaty:</h4>
-                <input type="radio" name="payment" value="eurocard" required> eurocard
-                <input type="radio" name="payment" value="visa" required> visa
-                <input type="radio" name="payment" value="transfer" required> przelew bankowy
-                <br><br>
+                <input type="radio" name="payment" value="eurocard"> eurocard
+                <input type="radio" name="payment" value="visa"> visa
+                <input type="radio" name="payment" value="transfer"> przelew bankowy
+                <span id="zaplata_error" class="czerwone"></span><br />
+                <br>
                 
                 <input type="submit" value="Wyslij">
                 <input type="reset" value="Anuluj">
