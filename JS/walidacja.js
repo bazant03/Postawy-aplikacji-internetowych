@@ -50,12 +50,12 @@ function sprawdz() {
     obiektWiek = /^[1-9][0-9]{1,2}$/;
     //Sprawdzanie kolejnych pól formularza.
     //w przypadku błędu - pojawia się odpowiedni komunikat
-    if (!sprawdzPole("lastname", obiektNazw)) {
+    if (!sprawdzPole("nazwisko", obiektNazw)) {
         ok = false;
         document.getElementById("nazw_error").innerHTML = "Wpisz poprawnie nazwisko!";
     } else document.getElementById("nazw_error").innerHTML = "";
 
-    if (!sprawdzPole("age", obiektWiek)) {
+    if (!sprawdzPole("wiek", obiektWiek)) {
         ok = false;
         document.getElementById("wiek_error").innerHTML = "Wpisz poprawnie wiek!";
     } else document.getElementById("wiek_error").innerHTML = "";
@@ -71,10 +71,32 @@ function sprawdz() {
         document.getElementById("produkt_error").innerHTML = "Musisz wybrać produkt!";
     } else document.getElementById("produkt_error").innerHTML = "";
 
-    if (!sprawdz_radio("payment")) {
+    /*if (!sprawdz_radio("payment")) {
         ok = false;
         document.getElementById("zaplata_error").innerHTML = "Musisz wybrać formę zapłaty!";
-    } else document.getElementById("zaplata_error").innerHTML = "";
+    } else document.getElementById("zaplata_error").innerHTML = "";*/
+
+    if (ok) {
+        const nazwisko = document.getElementById("nazwisko").value;
+        const wiek = document.getElementById("wiek").value;
+        const email = document.getElementById("email").value;
+        const kraj = document.getElementById("kraj").value;
+        const produkty = Array.from(document.querySelectorAll('input[name="produkt"]:checked'))
+            .map((p) => p.value)
+            .join(", ");
+        const zaplata = document.querySelector('input[type="radio"][name="platnosc"]:checked').value;
+
+        msg =
+            `Dane z wypełnionego przez Ciebie formularza:\n` +
+            `Nazwisko: ${nazwisko}\n` +
+            `Wiek: ${wiek}\n` +
+            `email: ${email}\n` +
+            `Kraj: ${kraj}\n` +
+            `Wybrane produkty: ${produkty}\n` +
+            `Sposób zapłaty: ${zaplata}\n`;
+
+        alert(msg);
+    }
 
     return ok;
 }

@@ -60,13 +60,13 @@
             <form action="#" method="post" onsubmit="return sprawdz()">
                 <table>
                     <tr>
-                        <td class="etykieta"><label for="lastname">Nazwisko:</label></td>
-                        <td class="pole"><input name="lastname" id="lastname" placeholder="Nowak"></td>
+                        <td class="etykieta"><label for="nazwisko">Nazwisko:</label></td>
+                        <td class="pole"><input name="nazwisko" id="nazwisko" placeholder="Nowak"></td>
                         <td id="nazw_error" class="czerwone"></td>
                     </tr>
                     <tr>
-                        <td class="etykieta"><label for="age">Wiek:</label></td>
-                        <td class="pole"><input name="age" id="age" placeholder="18"></td>
+                        <td class="etykieta"><label for="wiek">Wiek:</label></td>
+                        <td class="pole"><input name="wiek" id="wiek" placeholder="18"></td>
                         <td id="wiek_error" class="czerwone"></td>
                     </tr>
                     <tr>
@@ -75,30 +75,30 @@
                         <td id="email_error" class="czerwone"></td>
                     </tr>
                     <tr>
-                        <td class="etykieta"><label for="country">Państwo:</label></td>
+                        <td class="etykieta"><label for="kraj">Państwo:</label></td>
                         <td class="pole">
-                            <select name="country" id="country">
-                                <option value="f">Finlandia</option>
-                                <option value="p">Polska</option>
-                                <option value="r">Rumunia</option>
+                            <select name="kraj" id="kraj">
+                                <option value="fin">Finlandia</option>
+                                <option value="pl">Polska</option>
+                                <option value="rum">Rumunia</option>
                             </select>
                         </td>
                     </tr>
                 </table>
                 
                 <h4>Zamawiam tutorial z języka:</h4>
-                <input type="checkbox" name="PHP" id="php"> PHP
-                <input type="checkbox" name="C/C++" id="c/c++"> C/C++
-                <input type="checkbox" name="Java" id="java"> Java
+                <input type="checkbox" name="produkt" id="php" value="PHP"> PHP
+                <input type="checkbox" name="produkt" id="c/c++" value="C/C++"> C/C++
+                <input type="checkbox" name="produkt" id="java" value="Java"> Java
                 <span id="produkt_error" class="czerwone"></span></p>
                
                 <h4>Sposób zapłaty:</h4>
-                <input type="radio" name="payment" value="eurocard"> eurocard
-                <input type="radio" name="payment" value="visa"> visa
-                <input type="radio" name="payment" value="transfer"> przelew bankowy
+                <input type="radio" name="platnosc" value="eurocard" checked="checked"> eurocard
+                <input type="radio" name="platnosc" value="visa"> visa
+                <input type="radio" name="platnosc" value="transfer"> przelew bankowy
                 <span id="zaplata_error" class="czerwone"></span><br />
                 <br>
-                
+
                 <input type="submit" value="Wyslij">
                 <input type="reset" value="Anuluj">
             </form>
