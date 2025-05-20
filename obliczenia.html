@@ -11,7 +11,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <script src="JS/funkcje.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="JS/funkcje.js"></script> -->
+    <script>
+        $(function () {
+            $("section").css({
+                "background-color": "lightgray",
+                "color": "black",
+            });
+            $("input").css("font-weight", "bold");
+            $("#rata-mies").addClass("zielony");
+            $("#kwota-ods").addClass("zielony");
+
+            $("#wyslij").click(
+                function obliczRate() {
+                    const K = parseFloat($("#kwota").val());
+                    if (isNaN(K) || !isFinite(K) || K < 0) {
+                        alert("Niepoprawna kwota pożyczki");
+                        return;
+                    }
+
+                    const n = parseInt($("#ile-rat").val());
+                    if (isNaN(n) || !isFinite(n) || n < 0) {
+                        alert("Niepoprawna ilość rat");
+                        return;
+                    }
+
+                    const pr = parseFloat($("#procent").val()) / 100;
+                    if (isNaN(pr) || !isFinite(pr) || pr < 0) {
+                        alert("Niepoprawny procent");
+                        return;
+                    }
+                    const pr_mc = pr / 12;
+
+                    const rata = (K * pr_mc) / (1 - (1 / Math.pow(1 + pr_mc, n)));
+                    const kwotaZOdstekami = rata * n;
+
+                    $("#rata-mies").val(rata.toFixed(2));
+                    $("#kwota-ods").val(kwotaZOdstekami.toFixed(2));
+                }
+            );
+        });
+    </script>
 </head>
 
 <body>
