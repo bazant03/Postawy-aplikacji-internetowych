@@ -6,13 +6,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Galeria </title>
-    <link rel="stylesheet" href="CSS/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="JS/lightbox.js"></script>
+    <script src="JS/slider.js"></script>
     <link rel="stylesheet" href="CSS/lightbox.css" type="text/css">
+
+    <style>
+        .slider {
+            margin-top: 25px;
+        }
+    
+        .slider div img {
+            width: 70%;
+            height: 400px;
+            margin: auto;
+        }
+    
+        .slick-dots li button::before {
+            font-size: 15px;
+            line-height: 15px;
+            width: 15px;
+            height: 15px;
+            color: #dbffff;
+            opacity: 0.75;
+        }
+    
+        .slick-dots li.slick-active button::before {
+            color: #5F85DB;
+            opacity: 1;
+        }
+    </style>
 
 </head>
 
@@ -22,6 +52,18 @@
 
         <header>
             <h2>Szybki kurs HTML</h2>
+            <div class="slider">
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz1.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz2.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz3.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz4.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz5.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz6.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz7.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz8.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz9.JPG" alt="obraz1"></div>
+                <div class="slide-wrapper"><img src="zdj/miniaturki/obraz10.JPG" alt="obraz1"></div>
+            </div>
         </header>
 
         <nav>
